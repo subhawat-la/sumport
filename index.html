@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>FinancialLog</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">FL</div>
+        <div>
+          <div class="brand-name">FinancialLog</div>
+          <div class="brand-sub">บันทึกพอร์ตการลงทุนส่วนตัว</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#/dashboard" data-nav="dashboard"><span class="nav-icon">🏠</span>ภาพรวม</a>
+        <a href="#/holdings" data-nav="holdings"><span class="nav-icon">💼</span>สินทรัพย์</a>
+        <a href="#/prices" data-nav="prices"><span class="nav-icon">🔄</span>อัปเดตยอด/ราคา</a>
+        <a href="#" data-action="export-excel"><span class="nav-icon">📊</span>Export Excel</a>
+        <a href="#/settings" data-nav="settings"><span class="nav-icon">⚙️</span>ตั้งค่า</a>
+        <span class="nav-disabled" title="อยู่ในแผนงานเฟสถัดไป"><span class="nav-icon">🎯</span>เป้าหมาย/Rebalance <em>เร็วๆ นี้</em></span>
+      </nav>
+      <div class="sidebar-foot" id="sideStatus"></div>
+    </aside>
+    <div class="nav-backdrop" data-action="menu"></div>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" data-action="menu" aria-label="เมนู">☰</button>
+        <div class="titles">
+          <h1 id="pageTitle"></h1>
+          <div class="sub" id="pageSub"></div>
+        </div>
+        <div class="topbar-actions">
+          <a class="chip-info hide-sm" id="priceStatus" href="#/prices" title="สถานะการอัปเดตราคา"></a>
+          <button class="chip-info" data-action="edit-fx" title="อัตราแลกเปลี่ยน (คลิกเพื่อแก้ไข)">USD/THB <b id="fxRate"></b></button>
+          <button class="icon-btn" id="btnPrivacy" data-action="privacy" title="ซ่อน/แสดงตัวเลข">👁</button>
+          <a class="btn btn-primary hide-sm" href="#/add">+ เพิ่มสินทรัพย์</a>
+        </div>
+      </header>
+      <section id="view" class="view"></section>
+    </main>
+  </div>
+
+  <div id="gate"></div>
+  <div id="modalRoot"></div>
+  <div id="toastRoot" class="toast-root"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/mock-data.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/crypto.js"></script>
+  <script src="js/vault.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/prices.js"></script>
+  <script src="js/views-overview.js"></script>
+  <script src="js/views-holding.js"></script>
+  <script src="js/xlsx.js"></script>
+  <script src="js/gate.js"></script>
+  <script src="js/views-settings.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
